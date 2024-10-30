@@ -1,0 +1,26 @@
+.chat-list {
+    height: 85vh; /* Full viewport height */
+    overflow-y: auto; /* Scroll if content overflows */
+  }
+  
+  .chat-window {
+    flex: 1;
+    height: 83vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-content {
+    flex: 1; 
+    padding: 1rem; 
+    overflow-y: auto; 
+  }
+  
+  @media screen and (max-width: 900px) {
+    .chat-list {
+      display: none; /* Hide chat list on smaller screens */
+    }
+  }
+
+
+  

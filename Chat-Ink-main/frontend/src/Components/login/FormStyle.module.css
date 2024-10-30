@@ -1,0 +1,35 @@
+.sr_only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
+.input_outline {
+  background-color: transparent !important;
+  padding: 5px 0px !important;
+  color: #6fb1b6 !important;
+  border-radius: 0px !important;
+  border: solid 1px !important;
+  border-color: transparent transparent #cdd1d0 transparent !important;
+}
+.input_outline::placeholder {
+  color: #6fb1b6 !important;
+}
+.input_outline:focus {
+  box-shadow: 0px 3px 1px transparent !important;
+}
+.input_invalid:focus {
+  /* border-width: 2px !important; */
+  outline: none !important;
+  border-color: #ed9e9e !important;
+  box-shadow: 0 0 10px red !important;
+}
+.error {
+  color: red;
+}

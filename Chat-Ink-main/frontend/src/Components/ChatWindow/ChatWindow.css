@@ -1,0 +1,54 @@
+/* ChatWindow.css */
+
+.back-arrow {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.sent {
+  background-color: #3281955d;
+  margin-left: auto;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  max-width:fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+}
+.received {
+  background-color: #e2f2f7fc;
+  margin-left: 0;
+  margin-right: auto;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  max-width: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  font-family: 'Times New Roman', Times, serif;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+}
+
+.message-time {
+  font-size: 0.8em;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+
+.warning-message {
+  margin: 5px 0;
+}
+
+
+
+.clickable {
+  cursor: pointer;
+}
