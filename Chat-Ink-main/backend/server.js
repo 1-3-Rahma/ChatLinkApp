@@ -15,6 +15,9 @@ const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/authRoutes");
 const authMiddleware = require("./controllers/authMiddleware");
 
+const testRoute = require("./routes/testRoute");
+
+
 connectDB();
 
 // Set up Socket.IO server
@@ -28,11 +31,14 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/group", /*authMiddleware,*/ groupRoutes);
-app.use("/api/chats", /*authMiddleware,*/ chatRoutes);
-app.use("/api/messages", /*authMiddleware,*/ messageRoutes);
-app.use("/api/notifications", /*authMiddleware,*/ notificationRoutes);
-app.use("/api/user", /*authMiddleware,*/ userRoutes);
+app.use("/api/group", authMiddleware, groupRoutes);
+app.use("/api/chats", authMiddleware, chatRoutes);
+app.use("/api/messages", authMiddleware, messageRoutes);
+app.use("/api/notifications", authMiddleware, notificationRoutes);
+app.use("/api/user", authMiddleware, userRoutes);
+
+
+app.use("/api/test", testRoute);
 
 
 io.on("connection", (socket) => {
