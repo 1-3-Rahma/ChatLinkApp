@@ -39,6 +39,14 @@ app.use("/api/user", authMiddleware, userRoutes);
 
 
 app.use("/api/test", testRoute);
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' chrome-extension:;"
+  );
+  next();
+});
+
 
 
 app.get("/", (req, res) => {
