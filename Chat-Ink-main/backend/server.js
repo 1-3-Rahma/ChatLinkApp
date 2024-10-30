@@ -28,11 +28,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/group", authMiddleware, groupRoutes);
-app.use("/api/chats", authMiddleware, chatRoutes);
-app.use("/api/messages", authMiddleware, messageRoutes);
-app.use("/api/notifications", authMiddleware, notificationRoutes);
-app.use("/api/user", authMiddleware, userRoutes);
+app.use("/api/group", /*authMiddleware,*/ groupRoutes);
+app.use("/api/chats", /*authMiddleware,*/ chatRoutes);
+app.use("/api/messages", /*authMiddleware,*/ messageRoutes);
+app.use("/api/notifications", /*authMiddleware,*/ notificationRoutes);
+app.use("/api/user", /*authMiddleware,*/ userRoutes);
+
 
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
@@ -63,6 +64,10 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(5000, () => {
-  console.log("Server listening on port 5000");
-});
+// server.listen(5000, () => {
+//   console.log("Server listening on port 5000");
+// });
+
+// Export the app to be used by Vercel
+module.exports = app;    // <-- Export the express app
+
