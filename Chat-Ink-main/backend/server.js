@@ -41,6 +41,12 @@ app.use("/api/user", authMiddleware, userRoutes);
 app.use("/api/test", testRoute);
 
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Chat Link API");
+});
+
+
+
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
 
